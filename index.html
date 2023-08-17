@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <meta name="author" content="Dain Kim">
+
+  <meta name="keywords" content="이미지 테스트, 나를 알아보는 10가지 질문, 10-things-test, 3분이미지테스트, 이미지테스트">
+  <meta name="description" content="이미지 테스트: 나를 알아보는 10가지 질문">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="나를 알아보는 10가지 질문">
+  <meta property="og:description" content="사람들이 보는 나는 어떤 이미지일까?">
+  <meta property="og:image" content="img/og-logo.jpg">
+  <meta property="og:url" content="https://dev-dain.github.io/10-things-test/">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" type="text/css" href="img/favicon.png">
+  <link rel="appel-touch-icon-precomposed" href="img/favicon.png">
+  <title>
+    나를 알아보는 5가지 질문
+  </title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header+footer.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/qna.css">
+  <link rel="stylesheet" href="css/calc.css">
+  <link rel="stylesheet" href="css/result.css">
+  <!--[if lt ie 11]> 
+    <script>
+      alert('IE 11 미만 브라우저에서는 정상적으로 동작하지 않습니다.\n다른 브라우저(크롬, 파이어폭스 등)를 이용해주세요.');
+    </script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+      <button class="logo head" onclick=javascript:switchMode()></button>
+    </header>
+    <section id="welcome" class="container">
+      <div id="title-box">
+        <h1 class="title">
+          5가지의 유형의 지니어스<br>
+          난, 얼마나 생각해봤지??
+        </h1>
+        <h3 class="sec-tit">
+          5가지 질문으로<br>
+          알아보는 내 유형
+        </h3>
+        <span class="time-logo"></span>
+        <div>소요 시간 : 3분 내외</div>
+      </div>
+      <hr class="w-line">
+      <p class="w-line">
+        <span id="p-tit">지니어스 첫번째 문...</span><br>
+        솔직한 선택을 하십시오.<br>
+      </p>
+      <hr class="w-line">
+      <div id="name-input">
+        <input type="text" placeholder="이름" autofocus>
+      </div>
+      <p class="check-name warning"></p>
+      <div class="start-wrap">
+        <button class="start">시 작</button>
+      </div>
+    </section>
+    <section id="qna" class="container">
+      <div class="status-bar">
+        <div class="status"></div>
+      </div>
+      <div class="q box"></div>
+      <div class="answer"></div>
+    </section>
+    <section id="calc">
+      <div class="calc-bar">
+        CALCULATING
+        <div class="calc"></div>
+      </div>
+      <p class="wait">잠시 기다려주세요...</p>
+    </section>
+    <section id="result" class="container">
+      <div id="score-box">
+        <div class="p title"></div>
+        <div class="point"></div>
+        <div class="pin"></div>
+        <div class="score-bar"></div>
+      </div>
+      <div id="desc-box">
+        <div class="art"></div>
+        <div class="result title"></div>
+        <div class="res desc"></div>
+        <span class="go-artist highlight" onclick=javascript:goArtist()>
+          이런 당신에게 맞는 솔루션은?
+        </span>
+      </div>
+      <hr>
+      <p>공유하기</p>
+      <div class="hash">#10_things_test #3분이미지테스트 #이미지테스트</div>
+      <div id="share-box">
+        <a onclick=javascript:tw() target="_blank" alt="Share on Twitter" title="트위터에 공유하기">
+          <span class="tw"></span>
+        </a>
+        <a onclick=javascript:fb() target="_blank" alt="Share on Facebook" title="페이스북에 공유하기">
+          <span class="fb"></span>
+        </a>
+        <a onclick=javascript:nv() target="_blank" alt="Share on Naver" title="네이버에 공유하기">
+          <span class="nv"></span>
+        </a>
+        <a onclick=javascript:band() target="_blank" alt="Share on Naver Band" title="네이버 밴드에 공유하기">
+          <span class="band"></span>
+        </a>
+      </div>
+      <button onclick="" class="btn">다시하기</button>
+      <hr>
+      <div id="intro-box">
+        <div class="pro_pic"></div>
+        <div class="art-name">미지나최</div>
+        <div class="artist desc">
+          미지상 도움<br>
+          그림장인 최나미지<br><br>
+          email: <span class="highlight">비밀</span><br>
+          instagram: <a href="#"" target="_blank" title="새 페이지"><span
+              class="highlight">gyeoly27</span></a>
+        </div>
+        <button class="art-sns btn">
+          <a href="https://www.instagram.com/gyeoly27/" target="_blank" title="작가 인스타그램">
+            작품 더 보기
+          </a>
+        </button>
+      </div>
+      <hr>
+      <div class="caution">
+        <p>
+          사람은 서로 조금씩 달라서 5가지 이미지에 꼭 맞기는 어렵습니다.
+          결과가 조금 맞지 않더라도 이런 면이 있음을 알고 강점에 주목해 보세요.
+          <span class="go-share highlight" onclick=javascript:goShare()>공유하기</span>
+        </p>
+      </div>
+      
+      <button class="go-origin btn">
+        <a href="https://www.google.com" target="_blank" title="출처 영문 웹사이트">
+          사이트 출처
+        </a>
+      </button>
+    </section>
+    <footer id="footer">
+      <div>
+        <span class="highlight">규성</span>
+        © 2023
+      </div>
+      <a href="https://github.com/smallhoraeng" target=_blank title="개발자 깃허브">
+        <div class="logo foot github"></div>
+      </a>
+      <a href="https://www.naver.com" target=_blank title="개발자 블로그">
+        <div class="logo foot tistory"></div>
+      </a>
+    </footer>
+  </div>
+  <script src="js/darkmode.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/share.js"></script>
+</body>
+
+</html>
