@@ -11,7 +11,7 @@ let qIdx = -1;
 
 const goTo = (dest) => {
   let elem;
-  let elemTop;
+  let elemTop; 
   if (dest === 'artist') {
     elem = document.getElementById('intro-box');
   } else {
@@ -53,24 +53,113 @@ const calcScore = () => {
 
 const sortResult = (point) => {
   let num = 0;
-  if (point <= 20) {
+  let x = [
+  '1. 내 환경 속에서 할 수 있는 전도의 일을 구역장님과 의논해보기',
+  '2. 환경정리계획을 중장기적으로 세워보기',
+
+  '1. 전도심방 받기',
+  '2. 혼자있지말고 우리사람들과 나눔하고 함께있기',
+  '3. 전도인식개선',
+
+  '1. 1인1도구 개발 피드백받기',
+
+  '1. 도구사용경험치를 많이 쌓기',
+  '2. 컨셉이 맞지 않을 수 있으므로', 
+  '3. 내 컨셉에 맞게 재설정하는 피드백 받기"',
+
+  '1. 멘트점검받기'];
+
+  // desc.innerHTML = infoList[grade].desc;
+  // const desc = document.querySelector('.res');
+
+  if (point > 100 && point <= 155) {
     num = 0;
-  } else if (point <= 25) {
+    document.querySelector('.ch-text').innerText = x[0];
+    document.querySelector('.ch-text2').innerText = x[1];
+    
+  } else if (point > 200 && point <= 255) {
     num = 1;
-  } else if (point <= 50) {
+    document.querySelector('.ch-text').innerText = x[2];
+    document.querySelector('.ch-text2').innerText = x[3];
+    document.querySelector('.ch-text3').innerText = x[4];
+  } else if (point > 30 && point <= 35) {
     num = 2;
-  } else if (point <= 75) {
+    document.querySelector('.ch-text').innerText = x[5];
+  } else if (point > 40 && point <= 45) {
     num = 3;
-  } else if (point <= 100) {
+    document.querySelector('.ch-text').innerText = x[6];
+    document.querySelector('.ch-text2').innerText = x[7];
+    document.querySelector('.ch-text3').innerText = x[8];
+  } else if (point > 50 && point <= 55) {
     num = 4;
+    document.querySelector('.ch-text').innerText = x[9];
   } else {
     num = 5;
   }
   return num;
 }
 
+// const choose = (qnaList) => {
+//   let point = 0;
+  let str = ['1. 어차피 안될거란 생각',
+      '2. 내가 안해도 누가 하겠지란 생각',
+      '3. 내가하면 안될 것 같아 생각',
+      '4. 혼자라는 생각에 지침',
+      '5. 소속감이 크지않아 거점가기 힘듦',
+      '6. 예전처럼 할 자신이 없음',
+      '7. 잎사귀 구할 생각에 막막함',
+      '8. 방법을 알려주면 어떻게는 해보겠지만 모름']
+
+      for (let num = 0; num < str.length; num++) {
+        if (qnaList[2].a[num].score <= 1) {
+          const choElement = document.querySelector('.cho'); // 클래스명 ".cho"를 가진 요소 선택
+          if (choElement) {
+            choElement.textContent = str[num]; // 텍스트 내용 변경
+          }
+        }
+      }
+
+//   if (qnaList[2].a[num].score <= 1) {
+//     cholement.textContent = str[num];
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 2) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 3) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 4) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 5) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 6) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 7) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else if (qnaList[2].a[num].score <= 8) {
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   else{
+//     document.querySelector(".cho").innerText = str[i]
+//     num++;
+//   }
+//   return point;
+// }
+
 const goResult = () => {
-  if (pcMQL.matches) {ㄷ
+  if (pcMQL.matches) {
     console.log('PC');
     wrap.style.marginTop = '150px';
   } else if (tabletMQL.matches) {
@@ -92,8 +181,7 @@ const goResult = () => {
   const animal = document.querySelector('.result');
   const desc = document.querySelector('.res');
 
-  pTitle.innerHTML = u_name.value + ' 님의 점수는...';
-  res_point.innerHTML = point + '점';
+  pTitle.innerHTML = u_name.value + ' 님이 갖고있던 생각 ';
   pin.style.marginLeft = infoList[grade].mLeft;
   res_img.src = img_url;
   res_img.alt = infoList[grade].name;
@@ -101,6 +189,7 @@ const goResult = () => {
   res_img_div.appendChild(res_img);
   animal.innerHTML = infoList[grade].name;
   desc.innerHTML = infoList[grade].desc;
+  
 
   setTimeout(() => {
     header.style.display = 'block';
@@ -251,5 +340,6 @@ const load = () => {
   });
 
 }
+
 
 window.onload = load();
