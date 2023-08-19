@@ -72,25 +72,25 @@ const sortResult = (point) => {
   // desc.innerHTML = infoList[grade].desc;
   // const desc = document.querySelector('.res');
 
-  if (point > 100 && point <= 155) {
+  if (point > 100 && point <= 159) {
     num = 0;
     document.querySelector('.ch-text').innerText = x[0];
     document.querySelector('.ch-text2').innerText = x[1];
     
-  } else if (point > 200 && point <= 255) {
+  } else if (point > 200 && point <= 259) {
     num = 1;
     document.querySelector('.ch-text').innerText = x[2];
     document.querySelector('.ch-text2').innerText = x[3];
     document.querySelector('.ch-text3').innerText = x[4];
-  } else if (point > 30 && point <= 35) {
+  } else if (point > 30 && point <= 39) {
     num = 2;
     document.querySelector('.ch-text').innerText = x[5];
-  } else if (point > 40 && point <= 45) {
+  } else if (point > 40 && point <= 49) {
     num = 3;
     document.querySelector('.ch-text').innerText = x[6];
     document.querySelector('.ch-text2').innerText = x[7];
     document.querySelector('.ch-text3').innerText = x[8];
-  } else if (point > 50 && point <= 55) {
+  } else if (point > 50 && point <= 80) {
     num = 4;
     document.querySelector('.ch-text').innerText = x[9];
   } else {
@@ -175,7 +175,7 @@ const goResult = () => {
   const pTitle = document.querySelector('.p');
   const res_point = document.querySelector('.point');
   const pin = document.querySelector('.pin');
-  const img_url = 'img/image-' + grade + '.png';
+  const img_url = 'img/image-' + grade + '.PNG';
   const res_img = document.createElement('img');
   const res_img_div = document.querySelector('.art');
   const animal = document.querySelector('.result');
